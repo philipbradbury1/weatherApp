@@ -1,0 +1,11 @@
+{
+  "name": "weather_app",
+  "version": "1.0.0",
+  "description": "A weather app to get the current weather at a certain location.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Philip Bradbury",
+  "license": "ISC"
+}
