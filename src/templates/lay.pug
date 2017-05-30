@@ -1,6 +1,8 @@
 doctype html
 html(lang='en')
   head
+    script(type='text/javascript').
+      var test = !{img}
     title Weather App
     link(href='https://fonts.googleapis.com/css?family=Roboto', rel='stylesheet')
     link(rel='stylesheet', type='text/css', href='/static/css/style.css')
@@ -10,22 +12,26 @@ html(lang='en')
       | Welcome to a Node Express built weather app. Please enter your location below for current weather activity.
     #container.col
       #top
+        
+        #icon
+          canvas#icon1(width='230', height='230')
         #location
           p #{location}
-        #icon
-          img(src='/static/css/icon.gif')
         #temp
-          | #{temperature}
-          span °C
+          p #{temperature}
+            span °C
         #details
-          #humidity
-            p Humidity:
-            p #{humidity}
-          #wind
-            p Wind:
-            p  #{wind}mph 
+        #humidity
+          p Humidity:
+          span #{humidity}
+        #wind
+          p Wind:
+          span  #{wind}mph 
       #bottom
         #error
+          block test
         form(method='post')
           input(type='text', name='search', placeholder='Please enter your town or post code')
           input(type='submit', value='Search')
+  script(src='/static/js/skycons.js')
+  script(src='/static/js/sky.js').
